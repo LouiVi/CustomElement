@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Element Example</title>
+    <script src="ds:/Sys/app.js"></script>
+    <script src="script.js" defer></script> <!-- Link to your JS file -->
+</head>
+<body onLoad="load();" style="background-color:#ffffff ">
+    <h1>Custom HTML Element Example</h1>
+    <multi-systems id="ms">MultiSystems</multi-systems> <!-- Using the custom element -->
+    <script>
+    function load(){
+    var d = document.getElementById("ms").innerHTML;
+    app.ShowPopup(d);
+    setTimeout("change('<div>1234♤♡◇♧</div>')", 4500);
+    }
+    
+    function change(txt){
+    var d = document.getElementById("ms").shadowRoot;
+    alert(d.innerHTML);
+    d.innerHTML = txt;
+    alert(d.innerHTML);
+    }
+    </script>
+</body>
+</html>
